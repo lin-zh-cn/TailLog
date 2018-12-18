@@ -1,0 +1,28 @@
+grepnumlines: 80
+searchbeforecontext: 2
+searchaftercontext: 2
+
+extensions:
+ - log
+ - out
+directories:
+ - /website/logs/test/qc
+ - /website/logs/test/cms
+ - /website/logs/test/cmsweb
+ - /website/logs/test/wx
+
+ - /website/logs/test/cloud
+ - /website/logs/test/config
+ - /website/logs/test/api
+
+ - /website/logs/prod/qc
+ - /website/logs/prod/cms
+ - /website/logs/prod/cmsweb
+ - /website/logs/prod/wx
+
+ - /website/logs/prod/cloud-1
+ - /website/logs/prod/cloud-2
+ - /website/logs/prod/config-2
+ - /website/logs/prod/config-2
+ - /website/logs/prod/api-2
+ - /website/logs/prod/api-2

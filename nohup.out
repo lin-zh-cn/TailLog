@@ -1,0 +1,601 @@
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 50
+searchaftercontext: 2
+ * Serving Flask app "logagent" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+58.48.140.116 - - [17/Dec/2018 22:13:11] "POST /grep/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:13:15] "POST /grep/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:13:45] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:13:47] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:14:15] "GET /tail/config-test-20181217-212845.log_f8682032-0205-11e9-bf4f-5254003a8f87/50 HTTP/1.1" 301 -
+58.48.140.116 - - [17/Dec/2018 22:14:16] "GET /tail/config-test-20181217-212845.log_f8682032-0205-11e9-bf4f-5254003a8f87/50/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:14:24] "GET /tail/config-test-20181217-212845.log_f8682032-0205-11e9-bf4f-5254003a8f87/50/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:14:27] "GET /tail/config-test-20181217-212845.log_f8682032-0205-11e9-bf4f-5254003a8f87/50/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:14:32] "GET /tail/config-test-20181217-212845.log_f8682032-0205-11e9-bf4f-5254003a8f87/50/ HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:14:40] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:10] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50 HTTP/1.1" 301 -
+58.48.140.116 - - [17/Dec/2018 22:18:12] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/ HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 137, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 69, in process_file
+    return render_template('content.html', content=content)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/TailLog/templates/content.html", line 11, in top-level template code
+    {{ content|safe }}
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/filters.py", line 887, in do_mark_safe
+    return Markup(value)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/markupsafe/__init__.py", line 74, in __new__
+    return text_type.__new__(cls, base)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 586: ordinal not in range(128)
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:18:13] "GET /tail/cms-test-20181217-214925.log_17c3f712-0206-11e9-8553-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/website/alpha/dev/TailLog/logagent.py', reloading
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 50
+searchaftercontext: 2
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+58.48.140.116 - - [17/Dec/2018 22:25:09] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:17] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50 HTTP/1.1" 301 -
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 50
+searchaftercontext: 2
+('+++++++++++++++++++++', '2018-12-17 22:23:08.455 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:23:29.724  INFO 7952 --- [nio-8500-exec-9] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:23:29.725 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:23:29.725 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:23:29.732 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:23:33.903  INFO 7952 --- [nio-8500-exec-1] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:23:33.903 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:23:33.904 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:23:33.910 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:23:38.437  INFO 7952 --- [nio-8500-exec-8] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:23:38.437 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:23:38.438 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:23:38.444 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:23:59.721  INFO 7952 --- [nio-8500-exec-6] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:23:59.722 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:23:59.722 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:23:59.729 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:03.900  INFO 7952 --- [nio-8500-exec-3] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:03.900 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:03.901 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:03.908 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:08.436  INFO 7952 --- [nio-8500-exec-7] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:08.437 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:08.437 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:08.444 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:29.736  INFO 7952 --- [nio-8500-exec-2] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:29.736 DEBUG 7952 --- [nio-8500-exec-2] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:29.737 DEBUG 7952 --- [nio-8500-exec-2] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:29.744 DEBUG 7952 --- [nio-8500-exec-2] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:33.901  INFO 7952 --- [nio-8500-exec-4] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:33.901 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:33.901 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:33.907 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:38.437  INFO 7952 --- [nio-8500-exec-5] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:38.438 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:38.438 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:38.445 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:24:49.413  INFO 7952 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration<br>2018-12-17 22:24:59.722  INFO 7952 --- [io-8500-exec-10] com.qckj.cm58.48.140.116 - - [17/Dec/2018 22:25:20] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/ HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 138, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 70, in process_file
+    return render_template('content.html', content=content)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/TailLog/templates/content.html", line 11, in top-level template code
+    {{ content|safe }}
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/filters.py", line 887, in do_mark_safe
+    return Markup(value)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/markupsafe/__init__.py", line 74, in __new__
+    return text_type.__new__(cls, base)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 224: ordinal not in range(128)
+58.48.140.116 - - [17/Dec/2018 22:25:20] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:20] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:20] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:21] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:21] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:25:22] "GET /tail/cms-test-20181217-214925.log_8ec3e0e2-0207-11e9-975b-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/website/alpha/dev/TailLog/logagent.py', reloading
+s.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:24:59.723 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:24:59.723 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:24:59.730 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:25:03.898  INFO 7952 --- [nio-8500-exec-9] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:25:03.898 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:25:03.899 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:25:03.905 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:25:08.437  INFO 7952 --- [nio-8500-exec-1] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:25:08.438 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:25:08.438 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:25:08.446 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1')
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+58.48.140.116 - - [17/Dec/2018 22:33:39] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:46] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50 HTTP/1.1" 301 -
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 50
+searchaftercontext: 2
+('+++++++++++++++++++++', '2018-12-17 22:32:48.657  INFO 7952 --- [nio-8500-exec-8] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:32:48.657 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:32:48.657 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:32:48.665 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:32:59.793  INFO 7952 --- [nio-8500-exec-6] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:32:59.793 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:32:59.794 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:32:59.801 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:03.893  INFO 7952 --- [nio-8500-exec-3] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:03.893 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:03.894 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:03.906 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:04.406  INFO 7952 --- [nio-8500-exec-7] c.q.c.controller.ItemLocationController  : --- \xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xba\x93\xe4\xbd\x8d\xe5\x8f\xb7\xe6\x9b\xb4\xe6\x96\xb0\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82\xef\xbc\x81\xef\xbc\x81\xef\xbc\x81<br>2018-12-17 22:33:04.407  INFO 7952 --- [nio-8500-exec-7] c.q.c.controller.ItemLocationController  : ---\xe5\xb7\xb2\xe6\x94\xb6\xe5\x88\xb0excel, \xe5\x87\x86\xe5\xa4\x87\xe8\xa7\xa3\xe6\x9e\x90\xe6\x8f\x92\xe5\x85\xa5---<br>2018-12-17 22:33:04.407  INFO 7952 --- [nio-8500-exec-7] c.q.c.s.impl.ItemLocationServiceImpl     : \xe8\xbf\x9b\xe5\x85\xa5\xe5\x88\xb0addExcelToStock\xe6\x96\xb9\xe6\xb3\x95<br>2018-12-17 22:33:04.506 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : ==>  Preparing: insert into itemlocation (locationNumber, remark, offlineId, orderNo) VALUES (?,?,?,?) on DUPLICATE KEY UPDATE orderNo=? <br>2018-12-17 22:33:04.507 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : ==> Parameters: L-1-2(String), null, 57353883(Integer), 999(Integer), 999(Integer)<br>2018-12-17 22:33:04.532 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : <==    Updates: 1<br>2018-12-17 22:33:04.533 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : ==>  Preparing: insert into itemlocation (locationNumber, remark, offlineId, orderNo) VALUES (?,?,?,?) on DUPLICATE KEY UPDATE orderNo=? <br>2018-12-17 22:33:04.533 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : ==> Parameters: L-1-101(String), null, 57353883(Integer), 888(Integer), 888(Integer)<br>2018-12-17 22:33:04.546 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.ItemLocationDao.addItemLocation  : <==    Updates: 1<br>2018-12-17 22:33:04.547 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.I.selectRepeatData               : ==>  Preparing: SELECT orderNo,COUNT(orderNo),offlineId FROM itemlocation WHERE orderNo!=99999999 GROUP BY orderNo,offlineId HAVING COUNT(orderNo)>1 <br>2018-12-17 22:33:04.547 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.I.selectRepeatData               : ==> Parameters: <br>2018-12-17 22:33:04.556 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.I.selectRepeatData               : <==      Total: 0<br>2018-12-17 22:33:04.619 DEBUG 7952 --- [nio-8500-exec-2] c.d.I.selectByOfflineIdAndLocationNumber : ==>  Preparing: SELECT * from itemlocation where 1=1 order by id desc limit ? ,? <br>2018-12-17 22:33:04.620 DEBUG 7952 --- [nio-8500-exec-2] c.d.I.selectByOfflineIdAndLocationNumber : ==> Parameters: 0(Integer), 10(Integer)<br>2018-12-17 22:33:04.621 DEBUG 7952 --- [nio-8500-exec-2] c.d.I.selectByOfflineIdAndLocationNumber : <==      Total: 10<br>2018-12-17 22:33:04.621 DEBUG 7952 --- [nio-8500-exec-2] c.q.cms.dao.ItemLocationDao.selectCount  : ==>  Preparing: SELECT * from itemlocation where 1=1 <br>2018-12-17 22:33:04.622 DEBUG 7952 --- [nio-8500-exec-2] c.q.cms.dao.ItemLocationDao.selectCount  : ==> Parameters: <br>2018-12-17 22:33:04.644 DEBUG 7952 --- [nio-8500-exec-2] c.q.cms.dao.ItemLocationDao.selectCount  : <==      Total: 1073<br>2018-12-17 22:33:08.792  INFO 7952 --- [nio-8500-exec-4] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:08.793 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:08.793 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:08.801 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:18.202  INFO 7952 --- [nio-8500-exec-5] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:18.203 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:18.203 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:18.211 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:30.845  INFO 7952 --- [io-8500-exec-10] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:30.845 DEBUG 7952 --- [io-8500-exec-1058.48.140.116 - - [17/Dec/2018 22:33:46] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/ HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 138, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 70, in process_file
+    return render_template('content.html', content=content)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/TailLog/templates/content.html", line 11, in top-level template code
+    {{ content|safe }}
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/filters.py", line 887, in do_mark_safe
+    return Markup(value)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/markupsafe/__init__.py", line 74, in __new__
+    return text_type.__new__(cls, base)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 103: ordinal not in range(128)
+58.48.140.116 - - [17/Dec/2018 22:33:46] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:46] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:46] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:47] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:47] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:47] "GET /tail/cms-test-20181217-214925.log_bf0154d2-0208-11e9-b58e-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:33:51] "GET / HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50 HTTP/1.1" 301 -
+] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:30.846 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:30.853 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:33.893  INFO 7952 --- [nio-8500-exec-9] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:33.894 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:33.894 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:33.901 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:39.141  INFO 7952 --- [nio-8500-exec-1] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:39.141 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:39.142 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:39.149 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1')
+('+++++++++++++++++++++', '2018-12-17 22:33:30.853 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:33.893  INFO 7952 --- [nio-8500-exec-9] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:33.894 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:33.894 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:33.901 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:39.141  INFO 7952 --- [nio-8500-exec-1] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:39.141 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:39.142 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:39.149 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:33:48.193  INFO 7952 --- [nio-8500-exec-8] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:33:48.194 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:33:48.194 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:33:48.201 DEBUG 7952 --- [nio-8500-exec-8] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:00.237  INFO 7952 --- [nio-8500-exec-6] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:00.237 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:00.237 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:00.245 DEBUG 7952 --- [nio-8500-exec-6] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:03.892  INFO 7952 --- [nio-8500-exec-3] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:03.893 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:03.893 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:03.900 DEBUG 7952 --- [nio-8500-exec-3] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:08.794  INFO 7952 --- [nio-8500-exec-7] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:08.794 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:08.795 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:08.802 DEBUG 7952 --- [nio-8500-exec-7] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:09.438  INFO 7952 --- [nio-8500-exec-2] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe9\xa2\x84\xe8\xad\xa6\xe6\x8a\xa5\xe5\x91\x8a\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:09.439 DEBUG 7952 --- [nio-8500-exec-2] c.qckj.cms.dao.OrderDao.alarmForHandel   : ==>  Preparing: select A.status AS status, ifnull(B.counts, 0) AS num from (SELECT `order`.status AS status, count(id) AS counts from `order` WHERE 1 = 1 AND ((expressType = 2) OR (expressType = 99 AND enableToDispatch =1)) AND createTime between ? and ? AND offlineId = ? AND closeType = ? group by `order`.status) B right join (select 10 `status` union select 20 union select 30 union select 40 union select 50 ) A on A.status = B.status order by A.status DESC <br>2018-12-17 22:34:09.440 DEBUG 7952 --- [nio-8500-exec-2] c.qckj.cms.dao.OrderDao.alarmForHandel   : ==> Parameters: 2018-12-17 00:00:00(String), 2018-12-17 23:59:59(String), 53363130(Integer), 0(Integer)<br>2018-12-17 22:34:09.450 DEBUG 7952 --- [nio-8500-exec-2] c.qckj.cms.dao.OrderDao.alarmForHandel   : <==      Total: 5<br>2018-12-17 22:34:18.190  INFO 7952 --- [nio-8500-exec-4] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:18.190 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:18.190 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:18.198 DEBUG 7952 --- [nio-8500-exec-4] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:29.793  INFO 7952 --- [nio-8500-exec-5] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:29.793 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:29.794 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:29.802 DEBUG 7952 --- [nio-8500-exec-5] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:33.893  INFO 7952 --- [io-8500-exec-10] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:33.894 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:33.894 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:33.902 DEBUG 7952 --- [io-8500-exec-10] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:38.794  INFO 7952 --- [nio-8500-exec-9] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:38.795 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:38.795 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:38.803 DEBUG 7952 --- [nio-8500-exec-9] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:48.193  INFO 7952 --- [nio-8500-exec-1] com.qckj.cms.controller.ChartController  : ---\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe6\x9d\xa5\xe8\x87\xaa\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\x9a\x84\xe3\x80\x90\xe5\xbe\x85\xe5\xa4\x84\xe7\x90\x86\xe6\x9f\xa5\xe8\xaf\xa2\xe3\x80\x91\xe8\xaf\xb7\xe6\xb1\x82<br>2018-12-17 22:34:48.193 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==>  Preparing: SELECT count(*) FROM `order` ord WHERE ord.outStatus = 1 AND ord.status < 40 AND ord.closeType = 0 AND ord.outItems <> "" <br>2018-12-17 22:34:48.194 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : ==> Parameters: <br>2018-12-17 22:34:48.201 DEBUG 7952 --- [nio-8500-exec-1] c.q.c.d.C.queryLackRemindPageAccount     : <==      Total: 1<br>2018-12-17 22:34:49.414  INFO58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/ HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 138, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 70, in process_file
+    return render_template('content.html', content=content)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/TailLog/templates/content.html", line 11, in top-level template code
+    {{ content|safe }}
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/jinja2/filters.py", line 887, in do_mark_safe
+    return Markup(value)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/markupsafe/__init__.py", line 74, in __new__
+    return text_type.__new__(cls, base)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 224: ordinal not in range(128)
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+58.48.140.116 - - [17/Dec/2018 22:34:54] "GET /tail/cms-test-20181217-214925.log_c62e23c0-0208-11e9-8a73-5254003a8f87/50/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ 7952 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration')
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 80
+searchaftercontext: 2
+ * Serving Flask app "logagent" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+127.0.0.1 - - [18/Dec/2018 02:46:28] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 02:46:28] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 02:46:28] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:01:36] "GET /tail/nohup.out_1059e902-022c-11e9-8c45-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 03:01:36] "GET /tail/nohup.out_1059e902-022c-11e9-8c45-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:01:42] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:01:57] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:12:59] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:12:59] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:13:00] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:24:39] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:48:13] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:48:19] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 03:48:19] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:48:27] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:48:57] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:50:53] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:12] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:14] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:17] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:23] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 03:58:23] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:42] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/300/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:46] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/300/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:48] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/300/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:51] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/300/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:56] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:59] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:59] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:58:59] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:00] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/600/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:01] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 03:59:13] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:15] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:21] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 03:59:21] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:25] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:26] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:26] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:26] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:26] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:27] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:27] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:29] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:35] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:45] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:47] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:49] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:55] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 03:59:57] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 04:00:06] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 04:00:08] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 04:00:13] "GET /tail/cms-prod-20181218-035713.log_3b0f781a-0236-11e9-b8b0-5254003a8f87/8000/ HTTP/1.0" 200 -
+ * Detected change in '/usr/lib64/python2.7/code.py', reloading
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 80
+searchaftercontext: 2
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+ * Detected change in '/usr/lib64/python2.7/pprint.py', reloading
+searchbeforecontext: 2
+directories: ['/website/logs/test/qc', '/website/logs/test/cms', '/website/logs/test/cmsweb', '/website/logs/test/wx', '/website/logs/test/cloud', '/website/logs/test/config', '/website/logs/test/api', '/website/logs/prod/qc', '/website/logs/prod/cms', '/website/logs/prod/cmsweb', '/website/logs/prod/wx', '/website/logs/prod/cloud-1', '/website/logs/prod/cloud-2', '/website/logs/prod/config-2', '/website/logs/prod/config-2', '/website/logs/prod/api-2', '/website/logs/prod/api-2']
+extensions: ['log', 'out']
+grepnumlines: 80
+searchaftercontext: 2
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 329-345-310
+183.57.53.196 - - [18/Dec/2018 06:34:36] "GET /tail/cms-prod-20181218-022346.log_41e76060-0229-11e9-bf56-5254003a8f87/80 HTTP/1.1" 301 -
+183.57.53.196 - - [18/Dec/2018 06:34:36] "GET /tail/cms-prod-20181218-022346.log_41e76060-0229-11e9-bf56-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 07:26:56] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 07:26:56] "GET /tail/cms-prod-20181218-033716.log_b07fd9fc-0234-11e9-ae75-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 07:48:22] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 09:22:08] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 09:22:09] "GET /tail/cms-prod-20181218-035713.log_18c52a16-0236-11e9-a49d-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 10:50:43] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:50:43] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:50:43] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 10:52:06] "GET /tail/qc-prod-20181218-034631.log_b626aba2-026f-11e9-a4d2-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 10:52:06] "GET /tail/qc-prod-20181218-034631.log_b626aba2-026f-11e9-a4d2-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:07] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 10:52:15] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:23] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:24] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:24] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 10:52:47] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:47] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:52:47] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 10:53:06] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 10:53:06] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:23] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:28] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:28] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:28] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 10:53:38] "GET /tail/api-2-prod-20181218-015240.log_189538ee-0270-11e9-adb0-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 10:53:38] "GET /tail/api-2-prod-20181218-015240.log_189538ee-0270-11e9-adb0-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:44] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:53:47] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:54:06] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 10:54:06] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 10:54:07] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 10:54:08] "GET /tail/qc-prod-20181218-034631.log_f237286a-026f-11e9-92de-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:03:22] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:03:22] "GET /static/main.css HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:04:02] "GET /tail/wx-prod-20181218-021312.log_7aa8a70e-0271-11e9-8127-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:04:02] "GET /tail/wx-prod-20181218-021312.log_7aa8a70e-0271-11e9-8127-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:05] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:05] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [18/Dec/2018 11:25:09] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:25:09] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:20] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:21] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:25:21] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:30] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:25:33] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:25:33] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:09] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:26:09] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 11:26:10] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:10] "GET /tail/qc-prod-20181218-034631.log_83469c7e-0274-11e9-b976-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:20] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:22] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:26:22] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:26:22] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:22] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 150, in head
+    return process_file(tailer.head, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 11:26:23] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:25] "GET /head/qc-prod-20181218-034631.log_8c1cf5f0-0274-11e9-a0c6-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:25] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:35] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:26:36] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 11:26:36] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:26:36] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80/ HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:37] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:38] "GET /tail/qc-prod-20181218-034631.log_922de850-0274-11e9-ab24-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:26:46] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:27:22] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:27:22] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 150, in head
+    return process_file(tailer.head, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 11:27:23] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:27:24] "GET /head/qc-prod-20181218-034631.log_b0250726-0274-11e9-b909-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:27:36] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80 HTTP/1.0" 301 -
+127.0.0.1 - - [18/Dec/2018 11:27:36] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80/ HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/website/alpha/dev/Evns/showlog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/website/alpha/dev/TailLog/logagent.py", line 145, in tail
+    return process_file(tailer.tail, filename, int(numlines))
+  File "/website/alpha/dev/TailLog/logagent.py", line 63, in process_file
+    if filename in validfiles:
+TypeError: argument of type 'NoneType' is not iterable
+127.0.0.1 - - [18/Dec/2018 11:27:37] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [18/Dec/2018 11:27:38] "GET /tail/nohup.out_b2d5c910-0274-11e9-a14a-5254003a8f87/80/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+209.17.96.42 - - [18/Dec/2018 11:45:04] "GET / HTTP/1.1" 200 -
