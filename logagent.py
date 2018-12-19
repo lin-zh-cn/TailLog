@@ -180,4 +180,4 @@ if __name__ == "__main__":
 	init()
 	app.debug = True
 	app.secret_key = 'A0Zr97sfas8j/asdkj R~XHH!jkjaLWX/,?RT'
-	app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0', port=5000)
